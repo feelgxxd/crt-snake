@@ -1,0 +1,134 @@
+body {
+    font-family: "Press Start 2P", monospace;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    background-color: #121212; /* Dark retro background */
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#game-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 22px;
+    color: #FFB500;
+    text-shadow: 0 0 10px #FF8400;
+    margin-bottom: 8px;
+}
+
+#scoreboard {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 14px;
+    color: #fff;
+}
+
+#game-frame {
+    padding: 15px;
+    border: 5px solid #FFB500;
+    border-radius: 10px;
+    background-color: #cbcbcb;
+    box-shadow: 0 0 20px #FFEC40;
+}
+
+canvas {
+    display:block;
+    background-color: #131313;
+}
+
+.snake-glow {
+    filter: drop-shadow(0 0 5px #00ff9d) drop-shadow(0 0 10px #00ff9d);
+}
+
+.food-glow {
+    filter: drop-shadow(0 0 5px #ff007c) drop-shadow(0 0 10px #ff007c);
+}
+
+#game-over-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(18, 18, 18, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    font-family: "Press Start 2P", monospace;
+    color: #FFB500;
+    text-shadow: 0 0 10px #FF8400;
+}
+
+#game-over-content {
+    background-color: #131313;
+    border: 5px solid #FFB500;
+    border-radius: 15px;
+    padding: 30px 50px;
+    text-align: center;
+    box-shadow: 0 0 20px #FFEC40;
+}
+
+#game-over-content h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+#game-over-content p {
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+#restart-btn {
+    font-family: "Press Start 2P", monospace;
+    font-size: 14px;
+    background-color: #FFB500;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 25px;
+    color: #131313;
+    cursor: pointer;
+    box-shadow: 0 0 10px #FF8400;
+    transition: background-color 0.3s ease;
+}
+
+#restart-btn:hover {
+    background-color: #FF8400;
+}
+
+.hidden {
+    display: none;
+}
+
+body, html {
+    position: static;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#game-over-overlay {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+#game-over-overlay:not(.hidden) {
+    opacity: 1;
+    pointer-events: auto;
+}
